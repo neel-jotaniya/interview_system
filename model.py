@@ -43,7 +43,7 @@ def create_hr_model():
     return conversation
 
 def create_finance_model():
-    llm = ChatOpenAI(temperature=0.9, openai_api_key=os.environ.get('VARIABLE_NAME'))
+    llm = ChatOpenAI(temperature=0.9, openai_api_key=api_key)
     memory = ConversationBufferMemory(return_messages=True)
     conversation = ConversationChain(memory=memory, prompt=prompt2, llm=llm)
     return conversation
